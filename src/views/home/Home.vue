@@ -133,6 +133,7 @@
   import BackTop from 'components/content/backTop/BackTop';
 
   import {getHomeMultidata, getHomeGoods} from 'network/home';     // 只有default导出，import才可删除{}
+  import emitter from 'mitt/bus'
 
   export default {
     name: 'Home',
@@ -176,7 +177,10 @@
       this.getHomeGoods('sell')
 
       // 3.事件总线：监听item中图片加载完成
-      this.$bus.$on('itemImageLoad', () => {
+      // this.$bus.$on('itemImageLoad', () => {
+      //   console.log('-------')
+      // })
+      emitter.on('itemImageLoad', () => {
         console.log('-------')
       })
     },

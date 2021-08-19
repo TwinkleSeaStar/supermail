@@ -10,6 +10,7 @@
 </template>
 
 <script>
+ import emitter from 'mitt/bus'
  
   export default {
     name: 'GoodsListItem',
@@ -24,7 +25,8 @@
     methods: {
       imageLoad() {
         // 事件总线：发射事件
-        this.$bus.$emit('itemImageLoad')
+        // this.$bus.$emit('itemImageLoad')    // V2.x写法
+        emitter.emit('itemImageLoad')
       }
     }
   }
