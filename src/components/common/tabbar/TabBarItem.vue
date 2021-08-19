@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style scoped>
+/* 当 <style> 标签有 scoped 属性时，它的 CSS 只作用于当前组件中的元素。 */
+
   .tab-bar-item {
     flex: 1;
     text-align: center;
@@ -50,7 +52,8 @@ export default {
     font-size: 14px;
   }
 
-  .tab-bar-item img {
+/* 如果你希望 scoped 样式中的一个选择器能够作用得“更深”，例如影响子组件，你可以使用 >>> 操作符 */
+  .tab-bar-item >>> img {
     width: 24px;
     height: 24px;
     margin-top: 3px;
